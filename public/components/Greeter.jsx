@@ -1,24 +1,26 @@
-var React = require('react');
-var GreeterMessage = require('GreeterMessage');
-var GreeterForm = require('GreeterForm');
+import React from 'react';
+import GreeterMessage from 'GreeterMessage';
+import GreeterForm from 'GreeterForm';
 
-var Greeter = React.createClass({
-    getDefaultProps: function() {
-        return {
-          name: 'React (default)',
-          message: 'This is from the component (default)'
-        }
-    },
-    getInitialState: function(){
-        return {
-          name: this.props.name,
-          message: this.props.message
-        }
-    },
-    handleNewUpdate: function(updates){
+class Greeter extends React.Component {
+    static defaultProps = {
+      name: 'React (default)',
+      message: 'This is from the component (default)'
+    }
+
+    state = {
+      name: this.props.name,
+      message: this.props.message
+    }
+
+    foo = 'bar'
+
+    handleNewUpdate (updates){
         this.setState(updates);
-    },
-    render: function() {
+    }
+
+    render () {
+      console.log('foo is', this.foo)
       var name = this.state.name;
       var message = this.state.message;
 
@@ -29,6 +31,6 @@ var Greeter = React.createClass({
               </div>
             )
     }
-});
+}
 
 module.exports = Greeter;

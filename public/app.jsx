@@ -1,10 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Greeter = require('Greeter');
-
-var firstName = 'Andrew';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Greeter from 'Greeter';
 
 ReactDOM.render(
-    <Greeter name={firstName}/>,
+    <Greeter name={'Andrew'}/>,
     document.getElementById('app')
 );
